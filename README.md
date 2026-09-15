@@ -1,5 +1,9 @@
 # Pipeline ELT Instacart (Snowflake & dbt)
 
+# Pipeline ELT Instacart (Snowflake & dbt)
+
+![CI dbt Validation](https://github.com/Schneider509/instacart-elt-pipeline./actions/workflows/ci.yml/badge.svg)
+
 Ce projet met en œuvre un pipeline moderne d'extraction, chargement et transformation (ELT) basé sur le jeu de données public d'Instacart (3 millions de commandes e-commerce). L'objectif est d'ingérer les fichiers sources bruts dans **Snowflake**, puis de modéliser les données à l'aide de **dbt** selon une architecture dimensionnelle en étoile pour alimenter des cas d'usage analytiques et décisionnels.
 
 ---
