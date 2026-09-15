@@ -1,0 +1,54 @@
+name: CI dbt Validation
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  validate-dbt:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: Configurer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+
+      - name: Installer les dépendances
+        run: |
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Créer un profil factice pour dbt
+        run: |
+          mkdir -p ~/.dbt
+          cat <<EOF > ~/.dbt/profiles.yml
+          instacart_dbt:
+            target: dev
+            outputs:
+              dev:
+                type: snowflake
+                account: dummy_account
+                user: dummy_user
+                password: dummy_password
+                role: dummy_role
+                database: dummy_db
+                warehouse: dummy_wh
+                schema: dummy_schema
+          EOF
+
+      - name: Télécharger les packages dbt
+        run: |
+          cd instacart_dbt
+          dbt deps
+
+      - name: Vérifier la syntaxe et compiler les graphes
+        run: |
+          cd instacart_dbt
+          dbt parse
