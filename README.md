@@ -1,6 +1,5 @@
 # Pipeline ELT Instacart (Snowflake & dbt)
 
-# Pipeline ELT Instacart (Snowflake & dbt)
 
 ![CI dbt Validation](https://github.com/Schneider509/instacart-elt-pipeline./actions/workflows/ci.yml/badge.svg)
 
