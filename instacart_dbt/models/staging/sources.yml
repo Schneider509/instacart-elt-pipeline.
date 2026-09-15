@@ -1,0 +1,18 @@
+version: 2
+
+sources:
+  - name: instacart_raw
+    database: INSTACART_DB
+    schema: RAW
+    description: "Données brutes Instacart ingérées via Python"
+    tables:
+      - name: RAW_ORDERS
+        description: "Commandes brutes"
+      - name: RAW_ORDER_PRODUCTS
+        description: "Détails des paniers"
+      - name: RAW_PRODUCTS
+        description: "Catalogue produits"
+      - name: RAW_AISLES
+        description: "Rayons"
+      - name: RAW_DEPARTMENTS
+        description: "Départements / catégories"

@@ -1,0 +1,18 @@
+# Environnement Python
+.venv/
+__pycache__/
+*.pyc
+
+# Données brutes volumineuses
+instacart_data/
+*.csv
+*.zip
+
+# Identifiants et secrets
+.env
+profiles.yml
+
+# Artefacts générés par dbt
+**/target/
+**/dbt_packages/
+**/logs/.DS_Store

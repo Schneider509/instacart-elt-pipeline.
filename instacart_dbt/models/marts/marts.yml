@@ -1,0 +1,26 @@
+version: 2
+
+models:
+  - name: dim_products
+    description: "Table de dimension des produits Instacart avec rayons et départements."
+    columns:
+      - name: product_id
+        description: "Clé primaire du produit."
+        tests:
+          - unique
+          - not_null
+
+  - name: fct_orders
+    description: "Table de faits des commandes avec métriques agrégées."
+    columns:
+      - name: order_id
+        description: "Clé primaire de la commande."
+        tests:
+          - unique
+          - not_null
+
+      - name: total_products
+        description: "Nombre total de produits dans la commande."
+        tests:
+          - not_null
+          

@@ -1,0 +1,17 @@
+name: instacart_dbt
+
+profile: instacart_dbt
+
+seed-paths: ["seeds"]
+model-paths: ["models"]
+macro-paths: ["macros"]
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  instacart_dbt:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table
