@@ -3,16 +3,24 @@
 __pycache__/
 *.pyc
 
-# Données brutes volumineuses
+# Données volumineuses
 instacart_data/
 *.csv
 *.zip
 
-# Identifiants et secrets
+# Secrets
 .env
 profiles.yml
 
-# Artefacts générés par dbt
+# Artefacts et logs
+target/
 **/target/
+dbt_packages/
 **/dbt_packages/
-**/logs/.DS_Store
+logs/
+**/logs/
+*.log
+
+# Fichiers système
+.DS_Store
+**/.DS_Store
