@@ -26,9 +26,9 @@ print("✅ Fichiers CSV prêts en local.")
 # 2. Connexion à Snowflake
 print("❄️ Connexion à Snowflake...")
 conn = snowflake.connector.connect(
-    user='SCHNEIDERTHT',
-    password='MonSuperPassword2026!',
-    account='yrmscbf-nj47208',
+    user='',
+    password='',
+    account='',
     warehouse='DBT_WH',
     database='INSTACART_DB',
     schema='RAW',
